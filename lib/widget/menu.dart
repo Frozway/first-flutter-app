@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/utils/storage.dart';
 import 'package:flutter/material.dart';
 
 class MenuDrawer extends StatelessWidget {
@@ -45,6 +46,13 @@ class MenuDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/player');
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.delete),
+            title: const Text('Nettoyer les joueurs'),
+            onTap: () {
+              Storage.prefs.clear();
+            },
+          )
         ],
       ),
     );
